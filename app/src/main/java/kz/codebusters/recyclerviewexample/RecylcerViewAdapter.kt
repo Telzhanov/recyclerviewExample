@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 
-class RecyclerViewAdapter(var listUsers: ArrayList<String>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecyclerViewAdapter(var listUsers: ArrayList<User>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
-        viewHolder.itemView.nameTitle.text = listUsers[position]
+        viewHolder.itemView.nameTitle.text = listUsers[position].getName()
+        viewHolder.itemView.surnameTitle.text = listUsers[position].getSurname()
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
